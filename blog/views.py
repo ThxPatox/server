@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from .models import PERRO
+from rest_framework import viewsets
+from blog.serializers import PERROSerializer
 
-# Create your views here.
+
+class PERROViewSet(viewsets.ModelViewSet):
+    queryset = PERRO.objects.all()
+    serializer_class = PERROSerializer
